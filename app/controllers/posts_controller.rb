@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content])
+    post = Post.create(content: params[:content])
+    render json:{ post: post } # postキーと値（post変数）をハッシュとしたJSONデータ形式として返却
   end
 end
